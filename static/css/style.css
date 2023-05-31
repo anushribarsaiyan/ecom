@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+  
+
+}
+:root{
+    --bg-color: #222327,
+    --text-color:#fff
+    --main-color:#29fd53;
+}
+
+
+
+
+body{
+    min-height: 100vh;
+    background: whitesmoke;
+    color: var(--text-color)
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top:0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 28px 12%;
+    transition: all .50s ease;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+
+}
+.logo i{
+    color: var(--main-color);
+    font-size: 21px;
+    margin-right: 3px ;
+}
+
+
+.logo span{
+    color:  var(--text-color);
+    font-size: 1.1rem;
+    font-weight:200;
+}
+
+
+.navbar{
+    display: flex;
+
+
+}
+
+.navbar a{
+    color: var(--text-color);
+    font: size 1.1rem;
+    font-weight: 450; 
+    padding: 5px 0;
+    margin: 0px 10px;
+    transition: all .50s ease;
+} 
+
+
+.navbar a:hover{
+    color: green
+}
+
+.navbar a.active{
+    color: blue;
+}
+
+.main{
+    display:flex;
+    align-items: center;
+
+}
+
+.main a{
+    margin-right: 25px;
+    margin-right: 10px;
+    color:blue;
+    font: size 1.1rem;
+    font-weight: 500;
+    transition: all .50s ease;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+}
+ #menu-icon{
+    font-size: 35;
+    color: blue;
+    cursor: pointer;
+    
+ }
