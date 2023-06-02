@@ -160,3 +160,21 @@ header{
     color:antiquewhite
     
 }
+.form_container1 .card
+{
+    right: 10%;
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: rgba(0,0,0,1)
+
+}
+.product-container .card{
+    top: 50%;
+    left: 2%;
+    transition: translate(-50%,50%);
+    background: white;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,1)
+
+}

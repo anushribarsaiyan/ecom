@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="form_container1" style="margin: 90px;">
+    <div class="row">
+        {% for product in product %}
+           <div class="col-md-3">
+                <figure class="card">
+                    <div class="img-wrap"><img src="/media/{{product.product_images.first.images}}">
+                        <figcaption>
+                            <a>{{product.product_name}}</a>
+                            <a>{{product.price}}</a>
+
+                        </figcaption>
+                    </figure>
+           </div>
+        {% endfor %}    
+    </div>
+</div>
+  
+{% endblock content %}
