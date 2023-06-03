@@ -6,14 +6,11 @@
         {% for product in product %}
            <div class="col-md-3">
                 <figure class="card">
-                    <div class="img-wrap"><img src="/media/{{product.product_images.first.images}}">
-                        <figcaption>
-                            <a>{{product.product_name}}</a>
-                            <a>{{product.price}}</a>
-
-                        </figcaption>
-                    </figure>
-           </div>
+                    <img src="/media/{{product.product_images.first.images}}" style="height: 180px;">
+                        <a href="{% url 'get_product' product.slug %}">{{product.product_name}}</a>
+                        <div> <a>{{product.price}}.00</a></div> 
+                </figure>
+            </div>
         {% endfor %}    
     </div>
 </div>

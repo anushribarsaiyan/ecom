@@ -3,36 +3,37 @@
 
 {% block content %}
 
-<div class="product-container">
-    <div class="row">
-        <div class="col-6">
-            <div class="card">
-              <h1>kkknnnnnnnnnnnnnnnnnnnnnnnnnn
-                nnnnnnnnnnnnnnnnnnnnnnkk</h1>
-            </div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 col-lg-6 col-xs-12 left_image">
+      <div class="card mt-4 mr-2">
+        <img src="/media/{{product.product_images.first.images}}"style="height: 400px;">
+      </div>
+      <div class="row mt-3">
+        <div class="col-3 ml-3 ml-5 ">
+          {% for i in product.product_images.all %}
+          <img src="/media/{{i.images}}" style="height:30px";>
+          {% endfor %}
         </div>
-        <div class="col-6">
-            <div class="card">
-              <h1>Tommy Hilfiger</h1>
-              <h3>Navy Blue Animal Textured Structured Sling Bag</h3
-              <h2><span>
-                <i class="ri-star-s-line"></i>
-                <i class="ri-star-s-line"></i>
-                <i class="ri-star-s-line"></i>
-                <i class="ri-star-s-line"></i>
-              </span></h2>
-              <h2>₹1956 </h2>
-              <h1>SELECT SIZE</h2>
-                <span>
-                     <button type="button" class="btn btn-outline-primary">Primary</button>
-                    <button type="button" class="btn btn-outline-secondary">Secondary</button>
-                </span> 
-            </div>
-            
-        </div>
-        
-    </div>
-    
+      </div>
+      <hr>
+    </div>  
+    <div class="col-md-6 col-lg-6 col-xs-12 right_image">
+      <div class="card mt-4">
+        <h1>{{product.product_name}}</h1>
+        <h3>{{product.product_description}}</h3>
+        <h3>{{product.price}}.00</h3>
+        <h2><span>
+          <i class="ri-star-s-line"></i>
+          <i class="ri-star-s-line"></i>
+          <i class="ri-star-s-line"></i>
+          <i class="ri-star-s-line"></i>
+        </span></h2>
+        <h5>SELECT SIZE</h5>
+      </div>
+    </div>  
   </div>
+</div>
+
 
 {% endblock content %}
