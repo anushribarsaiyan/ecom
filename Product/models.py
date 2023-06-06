@@ -48,7 +48,12 @@ class Product(BaseModel):
         super(Product,self).save(*args,**kwargs)
 
     def __str__(self):
-        return self.product_name
+        return self.product_name    
+    
+    def get_product_by_size(self,size):
+        data = SizeVariant.objects.get(size_name = size)
+        return self.price  + data.price
+
 
 
 class ProductImage(BaseModel):
@@ -56,5 +61,5 @@ class ProductImage(BaseModel):
     images = models.ImageField(upload_to="product")
 
 
-    def __str__(self):
-        return self.images
+    # def __str__(self):
+    #     return self.images

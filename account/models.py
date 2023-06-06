@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from Base.model import BaseModel
+from Product.models import *
 from django.dispatch  import receiver
 from django.db.models.signals import post_save
 import uuid
@@ -23,3 +24,15 @@ def send_email_token(sender, instance, created, **kwargs):
             send_account_actrivation_email(email,email_token)
     except Exception as e:
         print(e)
+
+
+class Cart(BaseModel):
+    user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='cart')
+    is_paid = models.BooleanField(default=False)
+
+
+class cart_item(BaseModel):
+    cart = models.ForeignKey(Cart,on_delete=models.SET_NULL,null=True,blank=True)
+    product = models.ForeignKey(Product,,on_delete=models.SET_NULL,null=True,blank=True)
+    size_variant = models.ForeignKey(SizeVariant,on_delete=models.SET_NULL,null=True,blank=True)
+    color_variant = models.ForeignKey(ColorVariant,on_delete=models.SET_NULL,null=True,blank=True)

@@ -2,7 +2,6 @@
 
 
 {% block content %}
-
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-6 col-lg-6 col-xs-12 left_image">
@@ -20,20 +19,40 @@
     </div>  
     <div class="col-md-6 col-lg-6 col-xs-12 right_image">
       <div class="card mt-4">
+     
         <h1>{{product.product_name}}</h1>
         <h3>{{product.product_description}}</h3>
-        <h3>{{product.price}}.00</h3>
+        {% if updated_price %}
+          <h3>{{updated_price}}.00</h3>
+         {% else %}
+         <h3>{{product.price}}.00</h3> 
+         {% endif%}
         <h2><span>
           <i class="ri-star-s-line"></i>
           <i class="ri-star-s-line"></i>
           <i class="ri-star-s-line"></i>
           <i class="ri-star-s-line"></i>
         </span></h2>
-        <h5>SELECT SIZE</h5>
+        {% for size in product.size_variant.all %}
+        <div class="row">
+          <div class="col-auto">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio"  name="radioFilter" id="filter-none" onclick=" size_cloth('{{size.size_name}}')">
+                <label class="form-check-label" for="inlineRadio1">{{size.size_name}}</label>
+            </div>
+          </div>
+        {% endfor %}
       </div>
     </div>  
   </div>
 </div>
 
+<script>
+  function size_cloth(size){
 
+    window.location.href = window.location.pathname + `?size=${size}`
+  }
+
+
+</script>
 {% endblock content %}
